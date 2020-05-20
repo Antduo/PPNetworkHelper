@@ -1,5 +1,4 @@
-// UIRefreshControl+AFNetworking.m
-//
+// AFCompatibilityMacros.h
 // Copyright (c) 2011–2016 Alamofire Software Foundation ( http://alamofire.org/ )
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -20,34 +19,31 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#ifndef AFCompatibilityMacros_h
+#define AFCompatibilityMacros_h
 
-#import <TargetConditionals.h>
+#ifdef API_AVAILABLE
+    #define AF_API_AVAILABLE(...) API_AVAILABLE(__VA_ARGS__)
+#else
+    #define AF_API_AVAILABLE(...)
+#endif // API_AVAILABLE
 
-#if TARGET_OS_IOS
+#ifdef API_UNAVAILABLE
+    #define AF_API_UNAVAILABLE(...) API_UNAVAILABLE(__VA_ARGS__)
+#else
+    #define AF_API_UNAVAILABLE(...)
+#endif // API_UNAVAILABLE
 
-#import <UIKit/UIKit.h>
-
-NS_ASSUME_NONNULL_BEGIN
-
-/**
- This category adds methods to the UIKit framework's `UIRefreshControl` class. The methods in this category provide support for automatically beginning and ending refreshing depending on the loading state of a session task.
- */
-@interface UIRefreshControl (AFNetworking)
-
-///-----------------------------------
-/// @name Refreshing for Session Tasks
-///-----------------------------------
-
-/**
- Binds the refreshing state to the state of the specified task.
- 
- @param task The task. If `nil`, automatic updating from any previously specified operation will be disabled.
- */
-- (void)setRefreshingWithStateOfTask:(NSURLSessionTask *)task;
-
-@end
-
-NS_ASSUME_NONNULL_END
-
+#if __has_warning("-Wunguarded-availability-new")
+    #define AF_CAN_USE_AT_AVAILABLE 1
+#else
+    #define AF_CAN_USE_AT_AVAILABLE 0
 #endif
+
+#if ((__IPHONE_OS_VERSION_MAX_ALLOWED && __IPHONE_OS_VERSION_MAX_ALLOWED < 100000) || (__MAC_OS_VERSION_MAX_ALLOWED && __MAC_OS_VERSION_MAX_ALLOWED < 101200) ||(__WATCH_OS_MAX_VERSION_ALLOWED && __WATCH_OS_MAX_VERSION_ALLOWED < 30000) ||(__TV_OS_MAX_VERSION_ALLOWED && __TV_OS_MAX_VERSION_ALLOWED < 100000))
+    #define AF_CAN_INCLUDE_SESSION_TASK_METRICS 0
+#else
+    #define AF_CAN_INCLUDE_SESSION_TASK_METRICS 1
+#endif
+
+#endif /* AFCompatibilityMacros_h */

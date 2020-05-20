@@ -31,7 +31,6 @@
 		224086611D7074EA007E4E15 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 2240864C1D7074EA007E4E15 /* UIImageView+AFNetworking.m */; };
 		224086621D7074EA007E4E15 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 2240864F1D7074EA007E4E15 /* UIProgressView+AFNetworking.m */; };
 		224086631D7074EA007E4E15 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 224086511D7074EA007E4E15 /* UIRefreshControl+AFNetworking.m */; };
-		224086641D7074EA007E4E15 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 224086531D7074EA007E4E15 /* UIWebView+AFNetworking.m */; };
 		2240866E1D7074F5007E4E15 /* YYCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 224086671D7074F5007E4E15 /* YYCache.m */; };
 		2240866F1D7074F5007E4E15 /* YYDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 224086691D7074F5007E4E15 /* YYDiskCache.m */; };
 		224086701D7074F5007E4E15 /* YYKVStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2240866B1D7074F5007E4E15 /* YYKVStorage.m */; };
@@ -360,6 +359,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -423,7 +423,6 @@
 				35639C3F1E9B630C00FEA954 /* PPHTTPRequest.m in Sources */,
 				2240865D1D7074EA007E4E15 /* AFImageDownloader.m in Sources */,
 				22142E2E1D5E096E00EE2C40 /* AppDelegate.m in Sources */,
-				224086641D7074EA007E4E15 /* UIWebView+AFNetworking.m in Sources */,
 				22142E2B1D5E096E00EE2C40 /* main.m in Sources */,
 				2240865F1D7074EA007E4E15 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				2240865E1D7074EA007E4E15 /* AFNetworkActivityIndicatorManager.m in Sources */,
