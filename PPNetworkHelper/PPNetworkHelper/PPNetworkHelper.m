@@ -123,7 +123,7 @@ static AFHTTPSessionManager *_sessionManager;
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
-        if (_isOpenLog) {PPLog(@"responseObject = %@",responseObject);}
+        if (_isOpenLog) {PPLog(@"\n 请求URL: %@ \n 请求参数: %@ \n responseObject = %@",URL, parameters, responseObject);}
         [[self allSessionTask] removeObject:task];
         success ? success(responseObject) : nil;
         //对数据进行异步缓存
@@ -131,7 +131,7 @@ static AFHTTPSessionManager *_sessionManager;
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
-        if (_isOpenLog) {PPLog(@"error = %@",error);}
+        if (_isOpenLog) {PPLog(@"\n 请求URL: %@ \n 请求参数: %@ \n error = %@",URL, parameters, error);}
         [[self allSessionTask] removeObject:task];
         failure ? failure(error) : nil;
         
@@ -155,7 +155,7 @@ static AFHTTPSessionManager *_sessionManager;
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
-        if (_isOpenLog) {PPLog(@"responseObject = %@",responseObject);}
+        if (_isOpenLog) {PPLog(@"\n 请求URL: %@ \n 请求参数: %@ \n responseObject = %@",URL, parameters, responseObject);}
         [[self allSessionTask] removeObject:task];
         success ? success(responseObject) : nil;
         //对数据进行异步缓存
@@ -163,7 +163,7 @@ static AFHTTPSessionManager *_sessionManager;
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
-        if (_isOpenLog) {PPLog(@"error = %@",error);}
+        if (_isOpenLog) {PPLog(@"\n 请求URL: %@ \n 请求参数: %@ \n error = %@",URL, parameters, error);}
         [[self allSessionTask] removeObject:task];
         failure ? failure(error) : nil;
         
@@ -194,13 +194,13 @@ static AFHTTPSessionManager *_sessionManager;
         });
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
-        if (_isOpenLog) {PPLog(@"responseObject = %@",responseObject);}
+        if (_isOpenLog) {PPLog(@"\n 请求URL: %@ \n 请求参数: %@ \n responseObject = %@",URL, parameters, responseObject);}
         [[self allSessionTask] removeObject:task];
         success ? success(responseObject) : nil;
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
-        if (_isOpenLog) {PPLog(@"error = %@",error);}
+        if (_isOpenLog) {PPLog(@"\n 请求URL: %@ \n 请求参数: %@ \n error = %@",URL, parameters, error);}
         [[self allSessionTask] removeObject:task];
         failure ? failure(error) : nil;
     }];
@@ -247,13 +247,13 @@ static AFHTTPSessionManager *_sessionManager;
         });
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
-        if (_isOpenLog) {PPLog(@"responseObject = %@",responseObject);}
+        if (_isOpenLog) {PPLog(@"\n 请求URL: %@ \n 请求参数: %@ \n responseObject = %@",URL, parameters, responseObject);}
         [[self allSessionTask] removeObject:task];
         success ? success(responseObject) : nil;
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
-        if (_isOpenLog) {PPLog(@"error = %@",error);}
+        if (_isOpenLog) {PPLog(@"\n 请求URL: %@ \n 请求参数: %@ \n error = %@",URL, parameters, error);}
         [[self allSessionTask] removeObject:task];
         failure ? failure(error) : nil;
     }];
